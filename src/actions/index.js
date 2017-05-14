@@ -1,12 +1,14 @@
 import axios from 'axios';
 
 const API_KEY = '7912db3a91a058ed1a427bae09facf91';
-const ROOT_URL = `http://samples.openweathermap.org/data/2.5/forecast?appid=${API_KEY}`;
+const ROOT_URL = `http://api.openweathermap.org/data/2.5/forecast?appid=${API_KEY}`;
+// const ROOT_URL = `https://api.coursera.org/api/courses.v1`;
 
 export const FETCH_WEATHER = 'FETCH_WEATHER';
 
 export function fetchWeather(city) {
 	const url = `${ROOT_URL}&q=${city},us`;
+	// const url = ROOT_URL;
 	const request = axios.get(url);
 
 	return {
